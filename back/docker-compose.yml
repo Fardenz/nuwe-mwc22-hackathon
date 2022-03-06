@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+    db:
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: changeme
+            POSTGRES_USER: mwc
+            POSTGRES_DB: mwc
+        ports:
+            - '5432:5432'
+        volumes:
+            - db:/var/lib/postgresql/data
+volumes:
+    db:
+        driver: local
